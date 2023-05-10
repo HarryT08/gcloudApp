@@ -92,3 +92,100 @@ function changeModal(){
     document.getElementById("modalCrearNuevoLabel").innerHTML = "Crear nuevo usuario"
     document.getElementById("btnGuardar").setAttribute( "onClick", "crearNuevoUsuario();" );
 }
+
+function actualizarUsuario(){
+    let id = document.getElementById("idUser").value;
+    let nombre = document.getElementById("txtNombre").value;
+    let correo = document.getElementById("txtCorreo").value;
+    let telefono = document.getElementById("txtTelefono").value;
+
+    if(cadenaNula(nombre) || cadenaNula(correo) || cadenaNula(telefono)){
+        Swal.fire({
+            title: 'Atención!',
+            text: 'Debes llenar todos los campos',
+            icon: 'warning',
+            confirmButtonText: 'Cool'
+        })
+    }else{
+        $.ajax({
+            url: '/user/'+id,
+            type: 'PUT',
+            data: {
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono
+            },
+            success: function(response){
+                Swal.fire({
+                    title: 'Atención!',
+                    text: 'Usuario modificado correctamente',
+                    icon: 'success'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                })
+            },
+            error: function(error){
+                Swal.fire({
+                    title: 'Atención!',
+                    text: 'Error al modificar el usuario',
+                    icon: 'error'
+                })
+            }
+        })
+    }
+}
+
+function eliminarUsuario(id){
+    Swal.fire({
+        title: 'Atención!',
+        text: '¿Estas seguro de eliminar el usuario?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'No, cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '/user/'+id,
+                type: 'DELETE',
+                success: function(response){
+                    Swal.fire({
+                        title: 'Atención!',
+                        text: 'Usuario eliminado correctamente',
+                        icon: 'success'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.reload();
+                        }
+                    })
+                },
+                error: function(error){
+                    Swal.fire({
+                        title: 'Atención!',
+                        text: 'Error al eliminar el usuario',
+                        icon: 'error'
+                    })
+                }
+            })
+        }
+    })
+}
+function getUsuario(id){
+    $.ajax({
+        url: '/user/' + id,
+        type: 'GET',
+        success: function(response){
+            document.getElementById("idUser").value = response.id
+            document.getElementById("txtNombre").value = response.nombre
+            document.getElementById("txtCorreo").value = response.correo
+            document.getElementById("txtTelefono").value = response.telefono
+            document.getElementById("modalCrearNuevoLabel").innerHTML = "Actualizar usuario"
+            document.getElementById("btnGuardar").setAttribute( "onClick", "actualizarUsuario();" );
+        },
+        error: function(error){
+            lista.innerHTML = "<h1>Error al cargar los usuarios</h1>"
+        }
+    })
+}
