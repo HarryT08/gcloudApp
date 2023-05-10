@@ -28,3 +28,31 @@ def get_users():
         return jsonify(users), 200
     except Exception as e:
         return f"Ocurrio un error: {e}"
+
+@userAPI.route('/<id>', methods=['GET'])
+def get_user(id):
+    try:
+        user = user_Ref.document(id).get()
+        return jsonify(user.to_dict()), 200
+    except Exception as e:
+        return f"Ocurrio un error: {e}"
+
+@userAPI.route('/<id>', methods=['PUT'])
+def update_user(id):
+    try:
+        user_Ref.document(id).update({
+            'nombre': request.form['nombre'],
+            'correo': request.form['correo'],
+            'telefono': request.form['telefono']
+        })
+        return jsonify({"Actualizacion exitosa": True}), 200
+    except Exception as e:
+        return f"Ocurrio un error: {e}"
+
+@userAPI.route('/<id>', methods=['DELETE'])
+def delete_user(id):
+    try:
+        user_Ref.document(id).delete()
+        return jsonify({"Eliminacion exitosa": True}), 200
+    except Exception as e:
+        return f"Ocurrio un error: {e}"
