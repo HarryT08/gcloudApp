@@ -34,9 +34,9 @@ function cargarUsuarios(){
 }
 
 function crearNuevoUsuario(){
-    var nombre = document.getElementById("txtNombre").value;
-    var correo = document.getElementById("txtCorreo").value;
-    var telefono = document.getElementById("txtTelefono").value;
+    const nombre = document.getElementById("txtNombre").value;
+    const correo = document.getElementById("txtCorreo").value;
+    const telefono = document.getElementById("txtTelefono").value;
 
     if(cadenaNula(nombre) || cadenaNula(correo) || cadenaNula(telefono)){
         Swal.fire({
@@ -78,7 +78,7 @@ function crearNuevoUsuario(){
 
 function cadenaNula(valor){
     if (valor == null) { return true; }
-    for (var i = 0; i < valor.length; i++) {
+    for (let i = 0; i < valor.length; i++) {
         if ((valor.charAt(i) != ' ') && (valor.charAt(i) != "\t") && (valor.charAt(i) != "\n") && (valor.charAt(i) != "\r")) { return false; }
     }
     return true;
