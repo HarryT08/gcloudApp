@@ -23,6 +23,7 @@ Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion e
 
 - [Instalacion](#instalacion)
 - [Ejecucion](#ejecucion)
+- [Demo](#demo)
 - [Funcionamiento](#funcionamiento)
     + [Crear un Usuario](#crear_usuario)
     + [Visualizar los  Usuarios](#visualizar_usuario)
@@ -36,9 +37,41 @@ Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion e
  - [licencia & autores](#creditos)
  
 # Instalacion
-
+  + Instalar Python v3.11.3
+  ```
+   https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe
+  ```
+  + Clonar el proyecto utilizando el comando de Git:
+  ```bash
+    git clone https://github.com/HarryT08/gcloudApp.git
+  ```
+  + Descargar la key o la información de la Base de Datos (Firebase) y pegar el contenido en la carpeta raíz del proyecto.
+  ```
+  https://drive.google.com/file/d/1HWtGk_tmqjOCTSNkmTyRLvHslQVOrun2/view?usp=share_link
+  ```
+  Ejemplo:
+  
+  ![registro](https://s11.gifyu.com/images/image1eb8d98bba652bea.png)
+  
+  + En la raíz del proyecto ejecutar el siguiente comando para instalar las dependencias.
+  ```
+  pip install -r requirements.txt
+  ```
 # Ejecucion
-
+  + Una vez realizado el paso anterior, podemos ejecutar el proyecto utilizando el siguiente comando en la raíz del proyecto.
+  ```
+  py main.py
+  ```
+  + Nos debería aparecer en la consola algo parecido a esto:
+  
+  ![ejecucion](https://s11.gifyu.com/images/image34c79691d1ffb5b0.png)
+  
+  Dando click en el enlace de 'Running on', podemos visualizar la aplicación.
+# Demo
+  + Para probar la aplicación desplegada puede utilizar el siguiente link:
+  ```
+    https://leafy-valor-314300.ue.r.appspot.com/
+  ```
 # funcionamiento
 Este proyecto es un CRUD cuyo acrónimo significa Create, Read, Update y Delete (Crear, Leer, Actualizar y Eliminar). El objetivo principal de la aplicacion es la capacidad de crear, leer, actualizar y eliminar los usuarios en una base de datos. A continuacion se evidencia una breve descripcion y flujo de actividades de cada uno de los diferentes metodos en el software:
 
