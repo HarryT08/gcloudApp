@@ -6,7 +6,9 @@ default_app = initialize_app(cred)
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = '12345rtfescdvf' # Sensitive
+    secretKey = 'SECRET_KEY' # Sensitive
+    password = '12345rtfescdvf' # Sensitive
+    app.config[secretKey] = password
 
     from .userAPI import userAPI
     from .templateAPI import templateAPI
