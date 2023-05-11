@@ -24,16 +24,15 @@ Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion e
 - [Instalacion](#instalacion)
 - [Ejecucion](#ejecucion)
 - [Demo](#demo)
+- [Video de Presentacion](#video)
 - [Funcionamiento](#funcionamiento)
     + [Crear un Usuario](#crear_usuario)
     + [Visualizar los  Usuarios](#visualizar_usuario)
     + [Modificar un Usuario](#modificar_usuario)
     + [Eliminar un Usuario](#eliminar_usuario)
 - [arquitectura](#arquitectura)
-    + [Arquitectura](#definicion)
-    + [Ventajas](#ventajas)
-    + [¿Cuando implementar esta arquitectura?](#recomendaciones)
- - [Despliegue](#despliegue)
+    + [Lenguajes, Frameworks y Herramientas](#herramientas)
+    + [Arquitectura del Software](#arquitecturas)
  - [licencia & autores](#creditos)
  
 # Instalacion
@@ -72,6 +71,9 @@ Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion e
   ```
     https://leafy-valor-314300.ue.r.appspot.com/
   ```
+# video
+Puedes visualizar un video introductorio al proyecto aqui
+[Video de explicacion](https://youtu.be/b_fNt8yB2Fs)
 # funcionamiento
 Este proyecto es un CRUD cuyo acrónimo significa Create, Read, Update y Delete (Crear, Leer, Actualizar y Eliminar). El objetivo principal de la aplicacion es la capacidad de crear, leer, actualizar y eliminar los usuarios en una base de datos. A continuacion se evidencia una breve descripcion y flujo de actividades de cada uno de los diferentes metodos en el software:
 
@@ -114,3 +116,35 @@ El Sistema muestra los usuarios registrados en la base de datos, el flujo es rel
 
 ![eliminacion](https://i.ibb.co/0qNJWBj/eliminar.png)
 > Eliminacion de un usuario
+
+# arquitectura
+## herramientas
+Durante el desarrollo de la pratica se utilizo diferentes marco de trabajo y servicios como:
+
+- **Google Cloud Platform**: Google Cloud Platform (GCP) es un conjunto de servicios y herramientas en la nube que Google ofrece para la construccion y administracion de aplicaciones y servicios en linea, en este caso, usamos herramientas ofrecidas por Gcloud como lo es Firebase y Google App Engine:
+![GCloud](https://ayudaleyprotecciondatos.es/wp-content/uploads/2020/10/cloud-computing-google.jpg)
+  + **Firebase Admin**:  Es una biblioteca que permite interactuar con los servicios de firebase a traves de diversos lenguajes de programacion como Node Js, python, Java, entre otros. Se utiliza la libreria FireBase Admin para enviar peticiones al servidor de base de datos "Firestore Database" para el almacenamiento y persistencia de los datos a traves de una base de datos NOSQL
+  ![Firebase](https://upload.wikimedia.org/wikipedia/commons/b/bd/Firebase_Logo.png)
+  
+  + **Google App Engine**: Es uno de los servicios de Google Cloud que ofrece para el construccion, despliegue y alojamiento de aplicaciones web y moviles a traves de los servidores de Google, este proyecto fue desplegado en base al usa de dicha infraestructura
+  ![Google App Engine ](https://financesonline.com/uploads/2019/08/App-Engine-logo1.png)
+ - **Flask**: Es un framework de python utilizado para la creacion de manera facil y rapida respecto al desarrollo de pagina web, junto a Ninja2 ayudan a renderizar los motores de plantilla en el proyecto
+
+## arquitectura
+Basado en un modelo MVT (Modelo - Vista - Template), Esta arquitectura tiene como objetivo separar la lógica de la aplicación en tres componentes: el Modelo, la Vista y el Templado. A continuacion una breve descripcion de cada uno de estos componentes:
+
+- Modelo: representa el acceso a los datos y la lógica de negocio de la aplicación
+- Vista: Encargado de mostrar la información al usuarioa traves de interfaces graficas
+- Template: Establece la estructura visual de la aplicación.
+
+![Google App Engine ](https://www.askpython.com/wp-content/uploads/2020/08/image-23.png)
+
+
+La separación de estos componentes facilita la gestión del código y su mantenimiento a largo plazo, ya que cada componente puede ser modificado o reemplazado sin afectar a los otros. Además, esta arquitectura promueve la reutilización de código y la escalabilidad de la aplicación
+
+# creditos
+Santiago Alférez - 1151902
+Carlos Contreras - 1151903
+Harold Rueda - 1151904
+Oscar Bayona - 1151906
+Marlon Prado - 1151914
