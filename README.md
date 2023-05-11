@@ -27,7 +27,7 @@ Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion e
     + [Crear un Usuario](#crear_usuario)
     + [Visualizar los  Usuarios](#visualizar_usuario)
     + [Modificar un Usuario](#modificar_usuario)
-    + [Eliminar un Usuario](#eliminar usuario)
+    + [Eliminar un Usuario](#eliminar_usuario)
 - [arquitectura](#arquitectura)
     + [Arquitectura](#definicion)
     + [Ventajas](#ventajas)
