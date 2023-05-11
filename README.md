@@ -14,5 +14,23 @@
 ¡Hola bienvenido!, durante el presente repositorio encontrara un CRUD sencillo usando Python como lenguaje de programacion como tambien utilizamos Google Cloud Platform para alojar nuestra base de datos, Este repositorio es ideal para aquellos que están interesados en aprender cómo crear una aplicación sencilla con Python y GCP. También es perfecto para aquellos que desean mejorar sus habilidades en el manejo de bases de datos y el desarrollo de aplicaciones.
 Esperamos que encuentren útil este repositorio y lo disfruten. a continuacion encontrara el contenido jerarquico del repositorio
 # Tabla de Contenido
+- [Instalacion](#instalacion)
+- [Ejecucion](#ejecucion)
+- [Funcionamiento](#funcionamiento)
+    + [Crear un Usuario](#crear_usuario)
+    + [Visualizar los  Usuarios](#visualizar_usuario)
+    + [Modificar un Usuario](#modificar_usuario)
+    + [Eliminar un Usuario](#eliminar usuario)
+- [arquitectura](#arquitectura)
+    + [Arquitectura](#definicion)
+    + [Ventajas](#ventajas)
+    + [¿Cuando implementar esta arquitectura?](#recomendaciones)
+ - [Despliegue](#despliegue)
+ - [licencia & autores](#creditos)
+ 
+# Instalacion
 
-jejjee
+# Ejecucion
+
+# funcionamiento
+Este proyecto es un CRUD cuyo acrónimo significa Create, Read, Update y Delete (Crear, Leer, Actualizar y Eliminar). El objetivo principal de la aplicacion es la capacidad de crear, leer, actualizar y eliminar los usuarios en una base de datos.
